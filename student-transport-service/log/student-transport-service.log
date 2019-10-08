@@ -1,0 +1,34 @@
+2019-10-08T01:25:50.262-0500 INFO  : loggerName="o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker" threadName="main" txnId="" Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ca319019] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-08T01:26:00.386-0500 INFO  : loggerName="c.k.p.s.t.StudentTransportServiceApplication" threadName="main" txnId="" No active profile set, falling back to default profiles: default
+2019-10-08T01:26:00.793-0500 INFO  : loggerName="o.s.cloud.context.scope.GenericScope" threadName="main" txnId="" BeanFactory id=24827878-0041-357b-925f-b27178595ea8
+2019-10-08T01:26:00.843-0500 INFO  : loggerName="o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker" threadName="main" txnId="" Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ae178d1c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-08T01:26:00.852-0500 INFO  : loggerName="o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker" threadName="main" txnId="" Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ca319019] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-08T01:26:01.002-0500 INFO  : loggerName="o.s.b.w.e.tomcat.TomcatWebServer" threadName="main" txnId="" Tomcat initialized with port(s): 7443 (https)
+2019-10-08T01:26:01.011-0500 INFO  : loggerName="o.a.coyote.http11.Http11NioProtocol" threadName="main" txnId="" Initializing ProtocolHandler ["https-jsse-nio-7443"]
+2019-10-08T01:26:01.018-0500 INFO  : loggerName="o.a.catalina.core.StandardService" threadName="main" txnId="" Starting service [Tomcat]
+2019-10-08T01:26:01.018-0500 INFO  : loggerName="o.a.catalina.core.StandardEngine" threadName="main" txnId="" Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-08T01:26:01.091-0500 INFO  : loggerName="o.a.c.c.C.[Tomcat].[localhost].[/]" threadName="main" txnId="" Initializing Spring embedded WebApplicationContext
+2019-10-08T01:26:01.091-0500 INFO  : loggerName="o.s.web.context.ContextLoader" threadName="main" txnId="" Root WebApplicationContext: initialization completed in 698 ms
+2019-10-08T01:26:01.130-0500 WARN  : loggerName="o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext" threadName="main" txnId="" Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'studentTransportController': Unsatisfied dependency expressed through field 'studentTransportService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'studentTransportServiceImpl': Unsatisfied dependency expressed through field 'studentTransportRepo'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.karros.poc.student.transport.port.StudentTransportRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-10-08T01:26:01.131-0500 INFO  : loggerName="o.a.catalina.core.StandardService" threadName="main" txnId="" Stopping service [Tomcat]
+2019-10-08T01:26:01.158-0500 INFO  : loggerName="o.s.b.a.l.ConditionEvaluationReportLoggingListener" threadName="main" txnId="" 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-10-08T01:26:01.214-0500 ERROR : loggerName="o.s.b.d.LoggingFailureAnalysisReporter" threadName="main" txnId="" 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field studentTransportRepo in com.karros.poc.student.transport.domain.impl.StudentTransportServiceImpl required a bean of type 'com.karros.poc.student.transport.port.StudentTransportRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.karros.poc.student.transport.port.StudentTransportRepo' in your configuration.
+

@@ -1,0 +1,11 @@
+com/karros/poc/student/transport/adapter/StudentTransportRepoImpl$1.class
+com/karros/poc/student/transport/sql/SQLFile.class
+com/karros/poc/student/transport/domain/StudentVehicleInfo.class
+com/karros/poc/student/transport/StudentTransportServiceApplication.class
+com/karros/poc/student/transport/port/StudentTransportPort.class
+com/karros/poc/student/transport/domain/StudentVehicleAuditReport.class
+com/karros/poc/student/transport/service/StudentTransportService.class
+com/karros/poc/student/transport/adapter/StudentTransportController.class
+com/karros/poc/student/transport/adapter/StudentTransportRepoImpl.class
+com/karros/poc/student/transport/port/StudentTransportRepo.class
+com/karros/poc/student/transport/domain/impl/StudentTransportServiceImpl.class

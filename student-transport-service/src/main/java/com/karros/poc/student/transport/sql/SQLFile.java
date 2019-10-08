@@ -1,0 +1,8 @@
+package com.karros.poc.student.transport.sql;
+
+public interface SQLFile {
+	
+	String ASSIGN_VEHICLE_FOR_STUDENT = "insert into VEHICLE_TRANSACTION_RECORD (STUDENT_ID, SCHOOL_CODE, BUS_NUMBER, BUS_START_DATE, ACTIVE_FLAG) values (?,?,?,?,?)";
+	String REASSIGN_VEHICLE_FOR_STUDENT = "update VEHICLE_TRANSACTION_RECORD set BUS_END_DATE=?, ACTIVE_FLAG = 'N' where STUDENT_ID = ? and ACTIVE_FLAG = 'Y' and BUS_END_DATE IS NULL";
+	String FETCH_STUDENTS_VEHICLE_AUDIT = "SELECT STUDENT_ID, SCHOOL_CODE, BUS_NUMBER, BUS_START_DATE, BUS_END_DATE from VEHICLE_TRANSACTION_RECORD where STUDENT_ID = ? and BUS_START_DATE between ? and ? order by bus_start_date desc";
+}
