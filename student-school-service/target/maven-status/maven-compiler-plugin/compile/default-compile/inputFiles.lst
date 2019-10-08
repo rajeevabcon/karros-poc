@@ -1,0 +1,10 @@
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/port/SchoolManagementRepo.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/adapter/SchoolManagementRepoImpl.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/port/SchoolManagementPort.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/domain/SchoolAuditReport.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/service/SchoolManagementService.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/sql/SQLFile.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/adapter/SchoolManagementController.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/domain/impl/SchoolManagementServiceImpl.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/domain/SchoolInfo.java
+/Users/rajeev/Documents/poc/student-school-service/src/main/java/com/karros/poc/student/school/StudentSchoolServiceApplication.java

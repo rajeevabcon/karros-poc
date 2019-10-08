@@ -1,0 +1,28 @@
+spring:
+    application.name: school-management-service
+    datasource:
+      hikari:
+        connection-timeout: 20000 
+        minimum-idle: 10 
+        maximum-pool-size: 20 
+        idle-timeout: 10000 
+        max-lifetime: 1000 
+        auto-commit: true 
+      url: jdbc:oracle:thin:@localhost:1521:karrost
+      username: KARROS_UN01
+      password: adGaLwfn_PM2FSr1QP#waKOGCm
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+ 
+server:
+    ssl:
+      enabled: true
+      ciphers: TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384
+      enabled-Protocols: [TLSv1.2]
+      key-store: classpath:karros-tech-keystore.jks
+      key-store-password: Karros%Tech931
+    port: 8443
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

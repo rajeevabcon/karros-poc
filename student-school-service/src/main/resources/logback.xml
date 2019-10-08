@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="rolling.file.encoder.pattern" value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-5level : loggerName=&quot;%logger{36}&quot; threadName=&quot;%thread&quot; txnId=&quot;%X{txnId}&quot; %msg%n" />
+    <property name="rolling.file.max.size" value="100MB" />
+    <property name="rolling.file.max.history" value="30" />
+    <property name="appender.queue.size" value="500" />
+    <property name="log.file.main" value="${LOG_FILE:-${LOG_PATH:-log}/${APP_NAME}}"/>
+    <property name="log.file.metrics" value="${log.file.main}-metrics" />
+
+    <!-- Enable LevelChangePropagator for jul-to-slf4j optimization -->
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator"/>
+
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.file.main}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.file.main}.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches the max -->
+                <maxFileSize>${rolling.file.max.size}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${rolling.file.max.history}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${rolling.file.encoder.pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="METRICS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.file.metrics}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.file.metrics}.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches the max -->
+                <maxFileSize>${rolling.file.max.size}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${rolling.file.max.history}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-5level : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="ASYNC-ROLLING" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${appender.queue.size}</queueSize>
+        <appender-ref ref="ROLLING" />
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="ASYNC-ROLLING" />
+    </root>
+
+</configuration>
